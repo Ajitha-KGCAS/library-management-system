@@ -23,7 +23,8 @@ jobs:
           push: true 
           tags: myapp:latest  # Replace with your image tag
           # Add secrets for registry login if pushing to a registry
-
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v2
 
